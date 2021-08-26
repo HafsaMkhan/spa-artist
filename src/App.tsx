@@ -9,7 +9,8 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route path="/events/:artist" component={EventsPage} />
+          <Route exact path="/:artist" component={HomePage} />
+          <Route path="/:artist/events" component={EventsPage} />
           <Route component={NotFound} />
         </Switch>
       </BrowserRouter>

@@ -1,14 +1,16 @@
-import { FC, useContext } from "react";
-import { SearchContext, useArtist } from "src/state";
+import { FC } from "react";
+import { useParams } from "react-router-dom";
+import { useArtist } from "src/state";
 import { ArtistInfo } from "..";
 import { FullScreenLoader } from "../loader";
+import { NoSearchResults } from "../no-search-results";
 import { ArtistsStyled } from "./artists.styled";
 
 export const Artists: FC = () => {
-  const { searchValue } = useContext(SearchContext);
+  const { artist } = useParams<{ artist: string }>();
   const {
     res: { data, loading },
-  } = useArtist(searchValue);
+  } = useArtist(artist);
 
   return (
     <ArtistsStyled>
@@ -23,13 +25,7 @@ export const Artists: FC = () => {
           upcomingEvents={data.upcoming_event_count}
         />
       ) : (
-        <div className="not-found">
-          <img
-            src="/images/not-found.png"
-            className="img-fluid"
-            alt="No Search Results"
-          />
-        </div>
+        <NoSearchResults />
       )}
     </ArtistsStyled>
   );

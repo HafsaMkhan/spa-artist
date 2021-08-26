@@ -1,22 +1,24 @@
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FC, useContext } from "react";
+import { FC, useEffect, useState } from "react";
 import { Form } from "react-bootstrap";
-import { SearchContext } from "src/state";
+import { useHistory, useParams } from "react-router-dom";
 import { SearchBoxStyled } from "./searchBox.styled";
 
 export const SearchBox: FC = () => {
-  const { searchValue, setSearchValue } = useContext(SearchContext);
-  // const [search, setSearch] = useState(searchValue);
-  // let timeout: NodeJS.Timeout;
+  const { artist } = useParams<{ artist?: string}>();
+  const { push } = useHistory();
+  const [search, setSearch] = useState(artist || '');
 
   const onChange = (event: any) => {
-    // clearTimeout(timeout);
     event.preventDefault();
     const value = event.target.value?.trim();
-    setSearchValue(value);
-    // timeout = setTimeout(() => setSearchValue(search), 500)
+    setSearch(value);
   };
+
+  useEffect(() => {
+    push(`/${search}`)
+  }, [search]);
 
   return (
     <SearchBoxStyled className="mb-3">
@@ -24,7 +26,7 @@ export const SearchBox: FC = () => {
       <Form.Control
         type="text"
         placeholder="Search Artist"
-        value={searchValue}
+        value={search}
         onChange={onChange}
       />
     </SearchBoxStyled>

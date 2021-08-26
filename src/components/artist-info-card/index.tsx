@@ -33,8 +33,10 @@ export const ArtistInfo: FC<{
         <ArtistIconsDiv>
           {getIcon(fbLink, faFacebook, "color-blue")}
           {getIcon(link, faLink)}
-          <FontAwesomeIcon icon={faCalendarAlt} size="lg" />
-          <span className="event-text">{upcomingEvents} Events</span>
+          <a href={`${name}/events`}>
+            <FontAwesomeIcon icon={faCalendarAlt} size="lg" />
+            <span className="event-text">{upcomingEvents} Events</span>
+          </a>
         </ArtistIconsDiv>
       </ArtistDetailStyled>
     </ArtistInfoStyled>

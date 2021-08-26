@@ -1,12 +1,14 @@
-import { FC, useContext } from "react";
-import { SearchContext } from "src/state";
+import { FC } from "react";
+import { useParams } from "react-router-dom";
+// import { SearchContext } from "src/state";
 import { SearchBox } from "../search-box";
 import { HeroStyled } from "./hero.styled";
 
 export const HeroComponent: FC = () => {
-  const { searchValue } = useContext(SearchContext);
+  const { artist } = useParams<{ artist: string }>();
+
   return (
-    <HeroStyled isSearched={!!searchValue?.trim()}>
+    <HeroStyled isSearched={!!artist?.trim()}>
       <h2>
         Find Your <span>Favourite Artist</span>
       </h2>

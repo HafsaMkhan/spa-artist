@@ -15,4 +15,11 @@ export const MainStyled = createGlobalStyle`
   .color-blue {
     color: blue;
   }
+
+  .not-found {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 500px;
+  }
 `;

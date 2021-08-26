@@ -5,6 +5,7 @@ import { useEvents } from "src/state";
 import { GetEventInterface } from "src/state/events/artists.interface";
 import { EventInfo } from "../event-info-card";
 import { FullScreenLoader } from "../loader";
+import { NoSearchResults } from "../no-search-results";
 import { EventsStyled } from "./events.styled";
 
 export const Events: FC = () => {
@@ -12,7 +13,6 @@ export const Events: FC = () => {
   const {
     res: { data, loading },
   } = useEvents(artist);
-  console.log(data);
 
   return (
     <EventsStyled>
@@ -20,7 +20,7 @@ export const Events: FC = () => {
       {!loading && (
         <>
           <h2 className="mb-5">{data?.length} Upcoming Events</h2>
-          {!!data?.length && (
+          {data?.length ? (
             <Row xs={1} md={2} lg={3} className="g-4">
               {data.map(
                 ({ datetime, venue }: GetEventInterface, idx: number) => (
@@ -34,6 +34,8 @@ export const Events: FC = () => {
                 )
               )}
             </Row>
+          ) : (
+            <NoSearchResults />
           )}
         </>
       )}
