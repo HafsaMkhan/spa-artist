@@ -1,7 +1,10 @@
-import { FC, useMemo } from "react";
+import { FC, useMemo, Suspense } from "react";
 import { useHistory } from "react-router-dom";
-import { Artists, HeroComponent } from "../../components";
+import { lazyLoader } from "src/lazy";
+import { HeroComponent, FullScreenLoader } from "../../components";
 import { SearchContext } from "../../state";
+
+const Artists = lazyLoader(() => import("../../components"), "Artists");
 
 export const Home: FC = () => {
   const {
@@ -24,7 +27,11 @@ export const Home: FC = () => {
       value={{ searchValue: searchValue || "", setSearchValue }}
     >
       <HeroComponent />
-      {searchValue && <Artists />}
+      {searchValue && (
+        <Suspense fallback={FullScreenLoader}>
+          <Artists />
+        </Suspense>
+      )}
     </SearchContext.Provider>
   );
 };

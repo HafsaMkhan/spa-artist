@@ -17,27 +17,27 @@ export const ArtistInfo: FC<{
   upcomingEvents: number;
 }> = ({ name, media, link, fbLink, upcomingEvents }) => {
   return (
-      <ArtistInfoStyled>
-        <ArtistImg>
-          <img src={media} alt="Img" className="rounded-circle" />
-        </ArtistImg>
-        <ArtistDetailStyled>
-          <p className="artist-name mb-3">{name}</p>
-          <ArtistIconsDiv>
-            <a href={fbLink} target="_blank" rel="noreferrer">
-              <FontAwesomeIcon
-                icon={faFacebook}
-                size="lg"
-                className="color-blue"
-              />
-            </a>
-            <a href={link} target="_blank" rel="noreferrer">
-              <FontAwesomeIcon icon={faLink} size="lg" />
-            </a>
-            <FontAwesomeIcon icon={faCalendarAlt} size="lg" />
-            <span className="event-text">{upcomingEvents} Events</span>
-          </ArtistIconsDiv>
-        </ArtistDetailStyled>
-      </ArtistInfoStyled>
+    <ArtistInfoStyled>
+      <ArtistImg>
+        <img src={media} alt="Img" className="rounded-circle" />
+      </ArtistImg>
+      <ArtistDetailStyled>
+        <p className="artist-name mb-3">{name}</p>
+        <ArtistIconsDiv>
+          <a href={fbLink} target="_blank" rel="noreferrer">
+            <FontAwesomeIcon
+              icon={faFacebook}
+              size="lg"
+              className="color-blue"
+            />
+          </a>
+          <a href={link} target="_blank" rel="noreferrer">
+            <FontAwesomeIcon icon={faLink} size="lg" />
+          </a>
+          <FontAwesomeIcon icon={faCalendarAlt} size="lg" />
+          <span className="event-text">{upcomingEvents} Events</span>
+        </ArtistIconsDiv>
+      </ArtistDetailStyled>
+    </ArtistInfoStyled>
   );
 };

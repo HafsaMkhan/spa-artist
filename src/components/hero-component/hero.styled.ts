@@ -12,8 +12,8 @@ export const HeroStyled = styled.div<{ isSearched: boolean }>`
   min-height: ${(props) => (props.isSearched ? "20vh" : "100vh")};
   max-height: ${(props) => (props.isSearched ? "20vh" : "100vh")};
   max-height: ${(props) => (props.isSearched ? "20vh" : "100vh")};
-  transition: ${(props) => (props.isSearched ? "min-height 1s ease-in" : "min-height 1s ease-out")};
-
+  transition: ${(props) =>
+    props.isSearched ? "min-height 1s ease-in" : "min-height 1s ease-out"};
 
   & h2 {
     color: #fff;
