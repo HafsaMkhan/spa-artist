@@ -15,11 +15,11 @@ export const useArtist = (artistName?: string) => {
     try {
       if (artistName) {
         const { data } = await getArtistsApi(artistName, setCT(actionName));
-        setRes((res) => ({ loading: false, error: null, data }));
+        setRes({ loading: false, error: null, data });
       }
     } catch (error) {
       console.error(error);
-      setRes((res) => ({ loading: false, error, data: null }));
+      setRes({ loading: false, error, data: null });
     }
   }, [artistName]);
 

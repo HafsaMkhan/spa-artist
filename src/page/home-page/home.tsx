@@ -6,7 +6,7 @@ import { SearchContext } from "../../state";
 
 const Artists = lazyLoader(() => import("../../components"), "Artists");
 
-export const Home: FC = () => {
+export const HomePage: FC = () => {
   const {
     location: { search, pathname },
     push,

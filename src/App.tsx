@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { Home } from "./page";
+import { HomePage, EventsPage, NotFound } from "./page";
 import { MainStyled } from "./global.styled";
-import { FullScreenLoader } from "./components/loader";
 
 function App() {
   return (
@@ -9,8 +8,9 @@ function App() {
       <MainStyled />
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/loader" component={FullScreenLoader} />
+          <Route exact path="/" component={HomePage} />
+          <Route path="/events/:artist" component={EventsPage} />
+          <Route component={NotFound} />
         </Switch>
       </BrowserRouter>
     </div>
