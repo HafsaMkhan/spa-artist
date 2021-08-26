@@ -1,14 +1,15 @@
-import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
-import { Home } from './components/main';
-import { MainStyled } from './global.styled';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Home } from "./page";
+import { MainStyled } from "./global.styled";
 
 function App() {
   return (
     <div>
       <MainStyled />
       <BrowserRouter>
-        <Route path="/" component={Home} />
+        <Switch>
+          <Route exact path="/" component={Home} />
+        </Switch>
       </BrowserRouter>
     </div>
   );
