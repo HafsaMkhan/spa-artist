@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { faFacebook } from "@fortawesome/free-brands-svg-icons";
+import { faFacebook, IconDefinition } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   ArtistInfoStyled,
@@ -16,6 +16,13 @@ export const ArtistInfo: FC<{
   fbLink: string;
   upcomingEvents: number;
 }> = ({ name, media, link, fbLink, upcomingEvents }) => {
+  const getIcon = (link: string, icon: IconDefinition, className?: string) =>
+    link && (
+      <a href={link} target="_blank" rel="noreferrer">
+        <FontAwesomeIcon icon={icon} size="lg" className={className} />
+      </a>
+    );
+
   return (
     <ArtistInfoStyled>
       <ArtistImg>
@@ -24,16 +31,8 @@ export const ArtistInfo: FC<{
       <ArtistDetailStyled>
         <p className="artist-name mb-3">{name}</p>
         <ArtistIconsDiv>
-          <a href={fbLink} target="_blank" rel="noreferrer">
-            <FontAwesomeIcon
-              icon={faFacebook}
-              size="lg"
-              className="color-blue"
-            />
-          </a>
-          <a href={link} target="_blank" rel="noreferrer">
-            <FontAwesomeIcon icon={faLink} size="lg" />
-          </a>
+          {getIcon(fbLink, faFacebook, "color-blue")}
+          {getIcon(link, faLink)}
           <FontAwesomeIcon icon={faCalendarAlt} size="lg" />
           <span className="event-text">{upcomingEvents} Events</span>
         </ArtistIconsDiv>
