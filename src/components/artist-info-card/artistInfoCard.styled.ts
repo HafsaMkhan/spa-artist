@@ -62,5 +62,6 @@ export const ArtistIconsDiv = styled.div`
   }
   & a {
     margin-right: 10px;
+    text-decoration: none;
   }
 `;

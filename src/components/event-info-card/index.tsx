@@ -13,6 +13,8 @@ export const EventInfo: FC<{
   venue: string;
   date: string;
 }> = ({ country, city, venue, date }) => {
+  const getDateStr = new Date(date).toLocaleDateString()
+
   const getDetails = (key: string, value: string) => (
     <Col>
       <EventInfoTitle>{key}</EventInfoTitle>
@@ -29,7 +31,7 @@ export const EventInfo: FC<{
             {getDetails("Country", country)}
             {getDetails("City", city)}
             {getDetails("Venue", venue)}
-            {getDetails("Date", date)}
+            {getDetails("Date", getDateStr)}
           </Row>
         </Card.Body>
       </EventCardStyled>
