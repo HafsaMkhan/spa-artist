@@ -15,10 +15,14 @@ export const EventCardStyled = styled(Card)`
 
 export const EventInfoHeader = styled(Card.Header)`
   background-color: inherit;
+  font-size: 24px;
+  font-weight: 500;
 `;
 
 export const EventInfoTitle = styled(Card.Title)`
-  font-size: 16px;
+  font-size: 18px;
+  margin-top: 12px;
+  margin-bottom: 4px;
 `;
 
 export const EventInfoText = styled(Card.Text)`

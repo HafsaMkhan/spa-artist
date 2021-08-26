@@ -11,7 +11,7 @@ export const EventsPage: FC = () => {
   return (
     <Container>
       <div className='d-flex align-items-center mt-5'>
-        <a href={`/${artist}`} className='color-black'>
+        <a href={`/${artist}`} className='back-btn'>
           <FontAwesomeIcon icon={faChevronLeft} size='2x' />
         </a>
         <h2 className='ml-3 mb-0'>ARTIST</h2>

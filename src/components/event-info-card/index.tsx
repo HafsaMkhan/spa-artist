@@ -16,14 +16,14 @@ export const EventInfo: FC<{
   const getDateStr = new Date(date).toLocaleDateString()
 
   const getDetails = (key: string, value: string) => (
-    <Col>
+    <Col xs={12} md={6}>
       <EventInfoTitle>{key}</EventInfoTitle>
       <EventInfoText>{value}</EventInfoText>
     </Col>
   );
 
   return (
-    <Col>
+    <Col className='d-flex'>
       <EventCardStyled>
         <EventInfoHeader>Event Details</EventInfoHeader>
         <Card.Body>

@@ -10,7 +10,7 @@ export const HeroComponent: FC = () => {
   return (
     <HeroStyled isSearched={!!artist?.trim()}>
       <h2>
-        Find Your <span>Favourite Artist</span>
+        Find Your Favourite Artist
       </h2>
       <SearchBox />
     </HeroStyled>

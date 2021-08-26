@@ -40,6 +40,7 @@ export const ArtistDetailStyled = styled.div`
   padding-top: 10px;
   padding-left: 20px;
   justify-content: center;
+  flex-wrap: wrap;
 
   .artist-name {
     font-size: 20px;
@@ -61,7 +62,13 @@ export const ArtistIconsDiv = styled.div`
     color: #808080;
   }
   & a {
-    margin-right: 10px;
+    margin-right: 16px;
     text-decoration: none;
+    &:last-child {
+      margin-right: 0px;
+      @media screen and (max-width: 460px) {
+          display: flex;
+      }
+    }
   }
 `;
