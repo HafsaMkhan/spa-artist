@@ -1,8 +1,9 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { HomePage, EventsPage, NotFound } from "./page";
 import { MainStyled } from "./global.styled";
+import { FC } from "react";
 
-function App() {
+const App: FC = () => {
   return (
     <div>
       <MainStyled />
@@ -16,6 +17,6 @@ function App() {
       </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;

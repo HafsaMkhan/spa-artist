@@ -1,5 +1,5 @@
-import { Card } from "react-bootstrap";
-import styled from "styled-components";
+import { Card } from 'react-bootstrap';
+import styled from 'styled-components';
 
 export const ArtistInfoStyled = styled(Card)`
   display: flex;
@@ -67,7 +67,7 @@ export const ArtistIconsDiv = styled.div`
     &:last-child {
       margin-right: 0px;
       @media screen and (max-width: 460px) {
-          display: flex;
+        display: flex;
       }
     }
   }

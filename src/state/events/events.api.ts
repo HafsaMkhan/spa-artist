@@ -1,5 +1,5 @@
-import { AxiosPromise, CancelToken } from "axios";
-import { api } from "../../utils";
+import { AxiosPromise, CancelToken } from 'axios';
+import { api } from '../../utils';
 
 export const getEventsApi = (
   artist: string,

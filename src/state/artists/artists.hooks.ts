@@ -1,13 +1,12 @@
-import { useCallback, useEffect, useState } from "react";
-import { GetStateInterface, GetState } from "src/common";
-import { callCT, setCT } from "src/utils";
-import { getArtistsApi } from "./artists.api";
-import { GetArtistInterface } from "./artists.interface";
+import { useCallback, useEffect, useState } from 'react';
+import { GetStateInterface, GetState } from 'src/common';
+import { callCT, setCT } from 'src/utils';
+import { getArtistsApi } from './artists.api';
+import { GetArtistInterface } from './artists.interface';
 
 export const useArtist = (artistName?: string) => {
-  const [res, setRes] =
-    useState<GetStateInterface<GetArtistInterface>>(GetState);
-  const actionName = "GET_ARTIST";
+  const [res, setRes] = useState<GetStateInterface<GetArtistInterface>>(GetState);
+  const actionName = 'GET_ARTIST';
 
   const getQueryArtist = useCallback(async () => {
     setRes((res) => ({ ...res, loading: true, error: null }));

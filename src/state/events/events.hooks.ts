@@ -1,13 +1,13 @@
-import { useCallback, useEffect, useState } from "react";
-import { GetStateInterface, GetState } from "src/common";
-import { callCT, setCT } from "src/utils";
-import { GetEventInterface } from "./artists.interface";
-import { getEventsApi } from "./events.api";
+import { useCallback, useEffect, useState } from 'react';
+import { GetStateInterface, GetState } from 'src/common';
+import { callCT, setCT } from 'src/utils';
+import { GetEventInterface } from './artists.interface';
+import { getEventsApi } from './events.api';
 
 export const useEvents = (artistName?: string) => {
   const [res, setRes] =
     useState<GetStateInterface<Array<GetEventInterface>>>(GetState);
-  const actionName = "GET_EVENTS";
+  const actionName = 'GET_EVENTS';
 
   const getEvents = useCallback(async () => {
     setRes((res) => ({ ...res, loading: true, error: null }));

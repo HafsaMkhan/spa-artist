@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const HeroStyled = styled.div<{ isSearched: boolean }>`
   display: flex;
@@ -9,11 +9,11 @@ export const HeroStyled = styled.div<{ isSearched: boolean }>`
   flex-direction: column;
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: ${(props) => (props.isSearched ? "20vh" : "100vh")};
-  max-height: ${(props) => (props.isSearched ? "20vh" : "100vh")};
-  max-height: ${(props) => (props.isSearched ? "20vh" : "100vh")};
+  min-height: ${(props) => (props.isSearched ? '20vh' : '100vh')};
+  max-height: ${(props) => (props.isSearched ? '20vh' : '100vh')};
+  max-height: ${(props) => (props.isSearched ? '20vh' : '100vh')};
   transition: ${(props) =>
-    props.isSearched ? "min-height 1s ease-in" : "min-height 1s ease-out"};
+    props.isSearched ? 'min-height 1s ease-in' : 'min-height 1s ease-out'};
 
   & h2 {
     color: #fff;

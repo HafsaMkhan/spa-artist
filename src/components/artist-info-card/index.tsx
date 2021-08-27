@@ -1,13 +1,13 @@
-import { FC } from "react";
-import { faFacebook, IconDefinition } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FC } from 'react';
+import { faFacebook, IconDefinition } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   ArtistInfoStyled,
   ArtistImg,
   ArtistDetailStyled,
   ArtistIconsDiv,
-} from "./artistInfoCard.styled";
-import { faCalendarAlt, faLink } from "@fortawesome/free-solid-svg-icons";
+} from './artistInfoCard.styled';
+import { faCalendarAlt, faLink } from '@fortawesome/free-solid-svg-icons';
 
 export const ArtistInfo: FC<{
   name: string;
@@ -31,7 +31,7 @@ export const ArtistInfo: FC<{
       <ArtistDetailStyled>
         <p className="artist-name mb-3">{name}</p>
         <ArtistIconsDiv>
-          {getIcon(fbLink, faFacebook, "color-blue")}
+          {getIcon(fbLink, faFacebook, 'color-blue')}
           {getIcon(link, faLink)}
           <a href={`/${name}/events`}>
             <FontAwesomeIcon icon={faCalendarAlt} size="lg" />

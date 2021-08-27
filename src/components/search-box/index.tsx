@@ -1,12 +1,12 @@
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FC, useEffect, useState } from "react";
-import { Form } from "react-bootstrap";
-import { useHistory, useParams } from "react-router-dom";
-import { SearchBoxStyled } from "./searchBox.styled";
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FC, useEffect, useState } from 'react';
+import { Form } from 'react-bootstrap';
+import { useHistory, useParams } from 'react-router-dom';
+import { SearchBoxStyled } from './searchBox.styled';
 
 export const SearchBox: FC = () => {
-  const { artist } = useParams<{ artist?: string}>();
+  const { artist } = useParams<{ artist?: string }>();
   const { push } = useHistory();
   const [search, setSearch] = useState(artist || '');
 
@@ -17,7 +17,7 @@ export const SearchBox: FC = () => {
   };
 
   useEffect(() => {
-    push(`/${search}`)
+    push(`/${search}`);
   }, [search]);
 
   return (
