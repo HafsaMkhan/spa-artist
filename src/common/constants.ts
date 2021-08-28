@@ -1,8 +1,6 @@
-import { AxiosError, AxiosResponse } from 'axios';
-
 export interface GetStateInterface<T = any> {
   loading: boolean;
-  error: AxiosResponse<any> | AxiosError | null;
+  error: unknown;
   data: T | null;
 }
 
