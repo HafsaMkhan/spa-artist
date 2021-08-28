@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import { HomePage } from './home';
 
-test('renders learn react link', () => {
-  render(<App />);
+test('renders <Home /> Page', () => {
+  render(<HomePage />);
   const linkElement = screen.getByText(/Find Your Favourite Artist/i);
   expect(linkElement).toBeInTheDocument();
 });

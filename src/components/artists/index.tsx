@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { useParams } from 'react-router-dom';
-import { renderLoader } from 'src/common';
-import { useArtist } from 'src/state';
+import { renderLoader } from '../../common';
+import { useArtist } from '../../state';
 import { ArtistInfo } from '..';
 import { NoSearchResults } from '../no-search-results';
 import { ArtistsStyled } from './artists.styled';

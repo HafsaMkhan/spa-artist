@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import { Row } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
-import { renderLoader } from 'src/common';
-import { useEvents } from 'src/state';
-import { GetEventInterface } from 'src/state/events/artists.interface';
+import { renderLoader } from '../../common';
+import { useEvents } from '../../state';
+import { GetEventInterface } from '../../state';
 import { EventInfo } from '../event-info-card';
 import { NoSearchResults } from '../no-search-results';
 import { EventsStyled } from './events.styled';

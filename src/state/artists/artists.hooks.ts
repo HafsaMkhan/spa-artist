@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
-import { GetStateInterface, GetState } from 'src/common';
-import { callCT, setCT } from 'src/utils';
+import { GetStateInterface, GetState } from '../../common';
+import { callCT, setCT } from '../../utils';
 import { getArtistsApi } from './artists.api';
 import { GetArtistInterface } from './artists.interface';
 

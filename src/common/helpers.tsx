@@ -1,3 +1,3 @@
-import { FullScreenLoader } from 'src/components';
+import { FullScreenLoader } from '../components';
 
 export const renderLoader = (loading: boolean) => loading && <FullScreenLoader />;

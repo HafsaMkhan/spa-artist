@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
-import { GetStateInterface, GetState } from 'src/common';
-import { callCT, setCT } from 'src/utils';
-import { GetEventInterface } from './artists.interface';
+import { GetStateInterface, GetState } from '../../common';
+import { callCT, setCT } from '../../utils';
+import { GetEventInterface } from './events.interface';
 import { getEventsApi } from './events.api';
 
 export const useEvents = (artistName?: string) => {

@@ -1,7 +1,7 @@
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { HomePage, EventsPage, NotFound } from "./page";
-import { MainStyled } from "./global.styled";
-import { FC } from "react";
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { HomePage, EventsPage, NotFound } from './page';
+import { MainStyled } from './global.styled';
+import { FC } from 'react';
 
 const App: FC = () => {
   return (

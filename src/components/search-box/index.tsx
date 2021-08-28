@@ -24,6 +24,7 @@ export const SearchBox: FC = () => {
     <SearchBoxStyled className="mb-3">
       <FontAwesomeIcon icon={faSearch} size="lg" />
       <Form.Control
+        data-testid="search-box"
         type="text"
         placeholder="Search Artist"
         value={search}

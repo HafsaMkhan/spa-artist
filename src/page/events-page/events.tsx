@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FC } from 'react';
 import { Container } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
-import { Artists, Events } from 'src/components';
+import { Artists, Events } from '../../components';
 
 export const EventsPage: FC = () => {
   const { artist } = useParams<{ artist: string }>();
