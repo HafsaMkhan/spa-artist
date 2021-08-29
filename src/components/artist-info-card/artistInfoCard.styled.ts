@@ -64,11 +64,16 @@ export const ArtistIconsDiv = styled.div`
   & a {
     margin-right: 16px;
     text-decoration: none;
+    margin-bottom: 5px;
     &:last-child {
       margin-right: 0px;
       @media screen and (max-width: 460px) {
         display: flex;
       }
     }
+  }
+  @media screen and (max-width: 460px) {
+    display: flex;
+    flex-direction: column;
   }
 `;

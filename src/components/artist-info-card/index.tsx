@@ -17,10 +17,16 @@ export const ArtistInfo: React.FC<{
   fbLink: string;
   upcomingEvents: number;
 }> = ({ name, media, link, fbLink, upcomingEvents }) => {
-  const getIcon = (link: string, icon: IconDefinition, className?: string) => (
+  const getIcon = (
+    link: string,
+    icon: IconDefinition,
+    label: string,
+    className?: string
+  ) => (
     <ShouldRender if={link}>
       <a href={link} target="_blank" rel="noreferrer">
         <FontAwesomeIcon icon={icon} size="lg" className={className} />
+        <span className="event-text">{label}</span>
       </a>
     </ShouldRender>
   );
@@ -33,12 +39,9 @@ export const ArtistInfo: React.FC<{
       <ArtistDetailStyled>
         <p className="artist-name mb-3">{name}</p>
         <ArtistIconsDiv>
-          {getIcon(fbLink, faFacebook, 'color-blue')}
-          {getIcon(link, faLink)}
-          <a href={`/${name}/events`}>
-            <FontAwesomeIcon icon={faCalendarAlt} size="lg" />
-            <span className="event-text">{upcomingEvents} Events</span>
-          </a>
+          {getIcon(fbLink, faFacebook, 'Fb', 'color-blue')}
+          {getIcon(link, faLink, 'Web')}
+          {getIcon(link, faCalendarAlt, `${upcomingEvents} Events`)}
         </ArtistIconsDiv>
       </ArtistDetailStyled>
     </ArtistInfoStyled>
