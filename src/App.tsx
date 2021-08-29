@@ -1,17 +1,25 @@
-import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
-import { Home } from './components/main';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { HomePage, EventsPage, NotFound } from './page';
 import { MainStyled } from './global.styled';
+import { FC } from 'react';
+import { ArtistProvider } from './state/providers/artist.provider';
+import { ArtistSearchHistory } from './components';
 
-function App() {
+const App: FC = () => {
   return (
-    <div>
+    <ArtistProvider>
       <MainStyled />
       <BrowserRouter>
-        <Route path="/" component={Home} />
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/:artist" component={HomePage} />
+          <Route path="/:artist/events" component={EventsPage} />
+          <Route path="/artist/history" component={ArtistSearchHistory} />
+          <Route component={NotFound} />
+        </Switch>
       </BrowserRouter>
-    </div>
+    </ArtistProvider>
   );
-}
+};
 
 export default App;
