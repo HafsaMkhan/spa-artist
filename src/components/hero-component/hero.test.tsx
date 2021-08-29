@@ -16,15 +16,15 @@ describe('<HeroComponent /> tests', () => {
     render(<HeroComponent />);
   });
 
-  it('renders the HeroComponent component',  () => {
+  it('renders the HeroComponent component', () => {
     const linkElement = screen.getByText(/Find Your Favourite Artist/i);
     expect(linkElement).toBeInTheDocument();
   });
 
-  it('', () => {
+  it('checks for css condition in HeroComponent', () => {
     const hero = screen.getByTestId(/hero-component/i);
     const heroElem = document.getElementsByClassName(hero.className);
     const heroStyle = window.getComputedStyle(heroElem[0]);
-    expect(heroStyle.minHeight).toBe('100vh')
-  })
+    expect(heroStyle.minHeight).toBe('100vh');
+  });
 });
