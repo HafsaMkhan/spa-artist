@@ -13,7 +13,6 @@ export const SearchBoxStyled = styled(Form.Group)`
   & input {
     width: 100%;
     min-height: 50px;
-    font-size: 14px;
     border: none;
     padding: 4px 10px;
     background-color: transparent;
