@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React from 'react';
 import { faFacebook, IconDefinition } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -9,7 +9,7 @@ import {
 } from './artistInfoCard.styled';
 import { faCalendarAlt, faLink } from '@fortawesome/free-solid-svg-icons';
 
-export const ArtistInfo: FC<{
+export const ArtistInfo: React.FC<{
   name: string;
   media: string;
   link: string;

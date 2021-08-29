@@ -9,10 +9,28 @@ export const HeroStyled = styled.div<{ isSearched: boolean }>`
   flex-direction: column;
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: ${(props) => (props.isSearched ? '20vh' : '100vh')};
-  max-height: ${(props) => (props.isSearched ? '20vh' : '100vh')};
+  min-height: ${(props) => (props.isSearched ? '30vh' : '100vh')};
+  max-height: ${(props) => (props.isSearched ? '30vh' : '100vh')};
   transition: ${(props) =>
     props.isSearched ? 'min-height 1s ease-in' : 'min-height 1s ease-out'};
+
+  & .search-btn {
+    display: flex;
+    justify-content: flex-end;
+    width: 90%;
+    padding-top: 15px;
+    & a {
+      color: #fff;
+      text-decoration: solid;
+      font-size: 24px;
+      padding: 2px 20px;
+      border: 1px solid;
+      border-radius: 10px;
+    }
+    @media only screen and (max-width: 525px) {
+      width: unset;
+    }
+  }
 
   & h2 {
     color: #fff;

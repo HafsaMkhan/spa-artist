@@ -1,4 +1,5 @@
 export interface GetArtistInterface {
+  id: string;
   name: string;
   image_url: string;
   facebook_url: string;

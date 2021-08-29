@@ -1,7 +1,7 @@
-import { FC } from 'react';
+import { FC, useContext, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { renderLoader } from '../../common';
-import { useArtist } from '../../state';
+import { ArtistContext, useArtist } from '../../state';
 import { ArtistInfo } from '..';
 import { NoSearchResults } from '../no-search-results';
 import { ArtistsStyled } from './artists.styled';
@@ -11,6 +11,11 @@ export const Artists: FC = () => {
   const {
     res: { data, loading },
   } = useArtist(artist);
+  const { pushToHistory } = useContext(ArtistContext);
+
+  useEffect(() => {
+    data && pushToHistory(data);
+  }, [data]);
 
   return (
     <ArtistsStyled>

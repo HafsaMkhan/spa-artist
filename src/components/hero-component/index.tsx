@@ -8,6 +8,9 @@ export const HeroComponent: FC = () => {
 
   return (
     <HeroStyled isSearched={!!artist?.trim()} data-testid="hero-component">
+      <div className="search-btn">
+        <a href="/artist/history">Search History</a>
+      </div>
       <h2>Find Your Favourite Artist</h2>
       <SearchBox />
     </HeroStyled>
