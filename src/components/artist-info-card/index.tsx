@@ -8,6 +8,7 @@ import {
   ArtistIconsDiv,
 } from './artistInfoCard.styled';
 import { faCalendarAlt, faLink } from '@fortawesome/free-solid-svg-icons';
+import { ShouldRender } from 'should-render';
 
 export const ArtistInfo: React.FC<{
   name: string;
@@ -16,12 +17,13 @@ export const ArtistInfo: React.FC<{
   fbLink: string;
   upcomingEvents: number;
 }> = ({ name, media, link, fbLink, upcomingEvents }) => {
-  const getIcon = (link: string, icon: IconDefinition, className?: string) =>
-    link && (
+  const getIcon = (link: string, icon: IconDefinition, className?: string) => (
+    <ShouldRender if={link}>
       <a href={link} target="_blank" rel="noreferrer">
         <FontAwesomeIcon icon={icon} size="lg" className={className} />
       </a>
-    );
+    </ShouldRender>
+  );
 
   return (
     <ArtistInfoStyled>

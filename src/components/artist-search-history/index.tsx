@@ -18,12 +18,12 @@ export const ArtistSearchHistory: FC = () => {
         </a>
         <h2 className="ml-3 mb-0">Search History</h2>
       </div>
-      <Row xs={1} md={2} className="g-4 mt-5">
+      <Row xs={1} md={2} className="g-4 mt-5 mx-auto">
         <ShouldRender if={!artists?.length}>
           <h3 className="no-results">No Search Results</h3>
         </ShouldRender>
-        {!!artists.length &&
-          artists?.map(
+        <ShouldRender if={artists?.length}>
+          {artists?.map(
             (
               { name, image_url, facebook_url, url, upcoming_event_count },
               index: number
@@ -38,6 +38,7 @@ export const ArtistSearchHistory: FC = () => {
               />
             )
           )}
+        </ShouldRender>
       </Row>
     </ArtistSearchHistoryStyled>
   );
