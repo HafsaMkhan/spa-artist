@@ -34,7 +34,7 @@ export const Events: FC = () => {
             <Form.Control
               data-testid="search"
               type="text"
-              placeholder="Search Artist"
+              placeholder="Search Events"
               value={search}
               onChange={onSearch}
             />
